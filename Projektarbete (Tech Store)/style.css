@@ -10,7 +10,19 @@ body {
     display: flex;
     flex-direction: row;
     position: fixed;
-    background-color: black;
+    background-color: #212121;
     height: 60px;
     width: 100%;
+}
+
+.cartIcon {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    color:#FFFFFF;
+    margin-top: 15px;
+}
+
+.fa-shopping-cart {
+    font-size: 30px;
 }
