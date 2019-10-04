@@ -10,15 +10,35 @@ body {
     display: flex;
     flex-direction: row;
     position: fixed;
+    align-items: center;
     background-color: #212121;
     height: 60px;
     width: 100%;
+    padding: 20px;
 }
 
 .title {
     display: flex;
     justify-content: flex-start;
-    align-items: center;
     color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    width: 50%;
+}
+
+.cartIcon {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 50%;
+}
+
+.fa-shopping-cart {
+    font-size: 25px;
+    color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
 }
