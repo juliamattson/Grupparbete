@@ -6,6 +6,10 @@ body {
     margin: 0;
 }
 
+main {
+    padding-top: 60px;
+}
+
 .navbar {
     display: flex;
     flex-direction: row;
@@ -41,4 +45,51 @@ body {
 a {
     text-decoration: none;
     color: #ffffff;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    min-height: 10em;
+}
+
+.productContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+li {
+    list-style-type: none;
+    font-size: 20px;
+}
+
+.addToCartButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+    height: 20px;
+    width: 90%;
+}
+
+img {
+    height: 50vh;
+    width: auto;
+    object-fit: contain;    
+}
+
+p {
+    text-align: center;
+    font-weight: bold;   
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;  
+    font-family: Arial, Helvetica, sans-serif;
 }
