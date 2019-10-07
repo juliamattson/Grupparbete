@@ -1,26 +1,4 @@
-var listOfProducts; [
-    {
-        title: "iPhone X",
-        description: "Last years phone from Apple with a beautiful all display front.",
-        image: "iPhoneX.png",
-        price: 11495
-    },{
-        title: "One Plus 5",
-        description: "Sleek and powerful smartphone from One Plus.",
-        image: "OnePlus5.png",
-        price: 4995
-    },{
-        title: "Galaxy S8",
-        description: "Really cool edge to edge smartphone from Samsung.",
-        image: "SamsungS8.png",
-        price: 7990
-    },{
-        title: "LG V30",
-        description: "Super nice and beautiful smartphone from LG.",
-        image: "LGV30.png",
-        price: 7495
-    }
-]
+var listOfProducts;
 
 /** Get products from the json file and store it in a gobal variable */
 function loadProducts() {
@@ -36,12 +14,49 @@ function loadProducts() {
 
 
 function initSite() {
-    loadProducts();
+    loadProducts();    
     // This would also be a good place to initialize other parts of the UI
 }
 
 /** Uses the loaded products data to create a visible product list on the website */
 function addProductsToWebpage() {
+
+    var body = document.getElementsByTagName("body")[0] /* Plockar ut det första ur listan */
+    
+    var container = document.createElement("div") 
+    container.classList = "container"
+
+    for(var i = 0; i < listOfProducts.length; i++) {
+        var selectedProduct = listOfProducts[i]
+
+        var productContainer = document.createElement("div")
+        productContainer.classList = "productContainer"
+
+        var productName = document.createElement("h2")
+        productName.innerText = selectedProduct.title
+
+        var productDescription = document.createElement("p")
+        productDescription.innerText = selectedProduct.description
+
+        var image = document.createElement("img")
+        image.src = "/assets/" + selectedProduct.image
+
+        var price = document.createElement("p")
+        price.innerText = selectedProduct.price
+
+        var button = document.createElement("div")
+
+        productContainer.appendChild(productName)
+        productContainer.appendChild(productDescription)
+        productContainer.appendChild(image)
+        productContainer.appendChild(price)
+
+        container.appendChild(productContainer)
+
+    }
+
+    var main = document.getElementsByTagName("main")[0]
+    main.appendChild(container)
     // Check your console to see that the products are stored in the listOfProducts varible.
     console.log(listOfProducts);
 
