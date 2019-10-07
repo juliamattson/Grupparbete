@@ -35,21 +35,34 @@ function addProductsToWebpage() {
         var productName = document.createElement("h2")
         productName.innerText = selectedProduct.title
 
-        var productDescription = document.createElement("p")
+        var productDescription = document.createElement("div")
+        productDescription.classList = "description"
         productDescription.innerText = selectedProduct.description
 
         var image = document.createElement("img")
         image.src = "/assets/" + selectedProduct.image
 
-        var price = document.createElement("p")
+        var price = document.createElement("div")
+        price.classList = "price"
         price.innerText = selectedProduct.price
 
         var button = document.createElement("div")
+        button.classList = "button"
+
+        var icon = document.createElement("i")
+        icon.classList = "fas fa-cart-arrow-down"
+
+        var buttonText = document.createElement("p")
+        buttonText.innerText = "Lägg till i kundvagnen"
+        button.appendChild(icon)
+        button.appendChild(buttonText)
 
         productContainer.appendChild(productName)
         productContainer.appendChild(productDescription)
         productContainer.appendChild(image)
         productContainer.appendChild(price)
+        productContainer.appendChild(button)
+
 
         container.appendChild(productContainer)
 

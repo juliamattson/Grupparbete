@@ -59,11 +59,7 @@ a {
 .productContainer {
     display: flex;
     flex-direction: column;
-}
-
-li {
-    list-style-type: none;
-    font-size: 20px;
+    align-items: center
 }
 
 .addToCartButton {
@@ -78,18 +74,51 @@ li {
 img {
     height: 50vh;
     width: auto;
-    object-fit: contain;    
+    object-fit: contain; 
+    margin-top: 10px;   
 }
 
-p {
+.description {
     text-align: center;
     font-weight: bold;   
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-family: Arial, sans-serif;
+    padding-bottom: 5px;
 }
 
 h2 {
     text-align: center;
     font-weight: bold;
     font-size: 40px;  
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 12px;
+}
+
+.button { 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #5596F5;
+    color: #ffffff;
+    border-radius: 6px;
+    border: none;
+    width: 210px;
+    height: 35px;     
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+p {
+}
+
+.fa-cart-arrow-down {
+    font-size: 13px;
+}
+
+.price {
+    font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
 }
