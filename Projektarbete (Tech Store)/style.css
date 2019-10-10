@@ -7,7 +7,7 @@ body {
 }
 
 main {
-    padding-top: 60px;
+    padding-top: 70px;
 }
 
 .navbar {
@@ -59,7 +59,8 @@ a {
 .productContainer {
     display: flex;
     flex-direction: column;
-    align-items: center
+    align-items: center;
+    padding: 30px;
 }
 
 .addToCartButton {
@@ -81,7 +82,7 @@ img {
 .description {
     text-align: center;
     font-weight: bold;   
-    font-size: 11px;
+    font-size: 13px;
     font-family: Arial, sans-serif;
     padding-bottom: 5px;
 }
@@ -109,6 +110,11 @@ h2 {
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 20px;
     margin-bottom: 50px;
+}
+
+.button:hover {
+    background-color: rgb(111, 165, 247);
+    cursor: pointer;
 }
 
 p {

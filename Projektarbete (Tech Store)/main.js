@@ -1,5 +1,7 @@
 var listOfProducts;
 
+var kundvagn = [];
+
 /** Get products from the json file and store it in a gobal variable */
 function loadProducts() {
     fetch("./products.json")
@@ -48,6 +50,10 @@ function addProductsToWebpage() {
 
         var button = document.createElement("div")
         button.classList = "button"
+        button.name = selectedProduct.title
+        button.onclick = function() {
+            addProductToCart(this.name)
+        }
 
         var icon = document.createElement("i")
         icon.classList = "fas fa-cart-arrow-down"
@@ -66,6 +72,22 @@ function addProductsToWebpage() {
 
         container.appendChild(productContainer)
 
+    }
+    
+    function addProductToCart(title){
+        var chosenProduct = title;
+
+        for (var i = 0; i < listOfProducts.length; i++) {
+            if (chosenProduct == listOfProducts[i].title) {
+                kundvagn.push(listOfProducts[i])
+                console.log(kundvagn)
+                var	json_str = JSON.stringify(kundvagn);	
+                localStorage.doList = json_str;	
+            }
+        }
+
+
+        console.log(title)   
     }
 
     var main = document.getElementsByTagName("main")[0]
