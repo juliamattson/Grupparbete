@@ -1,6 +1,5 @@
 var listOfProducts;
 
-var kundvagn = [];
 
 /** Get products from the json file and store it in a gobal variable */
 function loadProducts() {
@@ -50,9 +49,9 @@ function addProductsToWebpage() {
 
         var button = document.createElement("div")
         button.classList = "button"
-        button.name = selectedProduct.title
+        button.name = selectedProduct
         button.onclick = function() {
-            addProductToCart(this.name)
+            addProductToCart(this)
         }
 
         var icon = document.createElement("i")
@@ -72,28 +71,35 @@ function addProductsToWebpage() {
 
         container.appendChild(productContainer)
 
-    }
-
-    function showNumbers() {
-        document.getElementById("numberOfProducts").innerText = kundvagn.length        
-    }
+    }    
     
-    function addProductToCart(title){
-        var chosenProduct = title;
+    function addProductToCart(product){
 
-        for (var i = 0; i < listOfProducts.length; i++) {
-            if (chosenProduct == listOfProducts[i].title) {
-                kundvagn.push(listOfProducts[i])
-                console.log(kundvagn)
-                var	json_str = JSON.stringify(kundvagn);	
-                localStorage.cartList = json_str;	
-            }
+        var cart = JSON.parse(localStorage.getItem("cartList"))
+
+        if(cart) {
+            // Här finns carten
+            // Pusha in produkten i cart
+            cart.push(product)
+        } else {
+            // Här finns inte carten
+            cart = []
+            // pusha in produkten i cart
+            cart.push(product)
         }
 
-        showNumbers()
-        console.log(title)   
-    }
+        // spara cart till localstorage
+        localStorage.setItem("cartList", JSON.stringify(cart))
 
+        function showNumbers() {
+            document.getElementById("numberOfProducts").innerText = cart.length        
+        }
+
+        console.log(product)   
+
+        showNumbers()
+    }
+    
     var main = document.getElementsByTagName("main")[0]
     main.appendChild(container)
     // Check your console to see that the products are stored in the listOfProducts varible.
@@ -105,6 +111,8 @@ function addProductsToWebpage() {
     // an explainetory comment like the one for this function, see row 22.
     
     // TODO: Remove the console.log and these comments when you've read them.
+    
 }
+
 
 
