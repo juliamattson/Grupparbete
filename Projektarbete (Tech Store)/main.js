@@ -73,6 +73,10 @@ function addProductsToWebpage() {
         container.appendChild(productContainer)
 
     }
+
+    function showNumbers() {
+        document.getElementById("numberOfProducts").innerText = kundvagn.length        
+    }
     
     function addProductToCart(title){
         var chosenProduct = title;
@@ -82,11 +86,11 @@ function addProductsToWebpage() {
                 kundvagn.push(listOfProducts[i])
                 console.log(kundvagn)
                 var	json_str = JSON.stringify(kundvagn);	
-                localStorage.doList = json_str;	
+                localStorage.cartList = json_str;	
             }
         }
 
-
+        showNumbers()
         console.log(title)   
     }
 
@@ -94,6 +98,7 @@ function addProductsToWebpage() {
     main.appendChild(container)
     // Check your console to see that the products are stored in the listOfProducts varible.
     console.log(listOfProducts);
+    
 
     // Add your code here, remember to brake your code in to smaller function blocks
     // to reduce complexity and increase readability. Each function should have
@@ -101,3 +106,5 @@ function addProductsToWebpage() {
     
     // TODO: Remove the console.log and these comments when you've read them.
 }
+
+
