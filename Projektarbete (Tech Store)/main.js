@@ -12,10 +12,12 @@ function loadProducts() {
         addProductsToWebpage();
     });
 }
-
+var icon = document.createElement("i")
+        icon.classList = "fas fa-cart-arrow-down"
 
 function initSite() {
-    loadProducts();    
+    loadProducts();   
+    showNumbers() 
     // This would also be a good place to initialize other parts of the UI
 }
 
@@ -70,34 +72,7 @@ function addProductsToWebpage() {
 
 
         container.appendChild(productContainer)
-
-    }    
-    
-    function addProductToCart(product){
-
-        var cart = JSON.parse(localStorage.getItem("cartList"))
-
-        if(cart) {
-            // Här finns carten
-            // Pusha in produkten i cart
-            cart.push(product)
-        } else {
-            // Här finns inte carten
-            cart = []
-            // pusha in produkten i cart
-            cart.push(product)
-        }
-
-        // spara cart till localstorage
-        localStorage.setItem("cartList", JSON.stringify(cart))
-
-        function showNumbers() {
-            document.getElementById("numberOfProducts").innerText = cart.length        
-        }
-
-        console.log(product)   
-
-        showNumbers()
+    showNumbers()
     }
     
     var main = document.getElementsByTagName("main")[0]
@@ -113,6 +88,36 @@ function addProductsToWebpage() {
     // TODO: Remove the console.log and these comments when you've read them.
     
 }
+
+function addProductToCart(product){
+
+    var cart = JSON.parse(localStorage.getItem("cartList"))
+
+    if(cart) {
+        // Här finns carten
+        // Pusha in produkten i cart
+        cart.push(product)
+    } else {
+        // Här finns inte carten
+        cart = []
+        // pusha in produkten i cart
+        cart.push(product)
+    }
+
+
+    // spara cart till localstorage
+    localStorage.setItem("cartList", JSON.stringify(cart))
+    showNumbers()
+ 
+}
+
+function showNumbers() {
+    var cart = JSON.parse(localStorage.getItem("cartList"))
+    if (cart){
+        document.getElementById("numberOfProducts").innerText = cart.length   
+    }
+      
+}  
 
 
 
