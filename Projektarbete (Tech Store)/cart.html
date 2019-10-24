@@ -10,7 +10,7 @@
         <!-- Visit www.fontawesome.com on how to add font icons to your project -->
         <script src="https://kit.fontawesome.com/e8127072bf.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="/style.css"> <!-- Link your stylesheet file/files, do NOT write styles in the html file! -->
-        <script src="/cart.js"></script>
+        
     </head>
     <body onload="initSite()">
         <header>
@@ -19,6 +19,7 @@
                             <a href="/index.html"><h1>TechStore</h1></a>
                         </div>
                         <div class="cartIcon">  
+                                <div id="numberOfProducts"></div>
                                 <a href="/cart.html"><i class="fas fa-shopping-cart"></i></a>                  
                             </div>
             </div>
@@ -28,6 +29,6 @@
         <main>
             <!-- Add the content of your site here via javascript -->
         </main>
-
+        <script src="/cart.js"></script>
     </body>
 </html>
