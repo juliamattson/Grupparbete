@@ -12,8 +12,7 @@ function loadProducts() {
         addProductsToWebpage();
     });
 }
-var icon = document.createElement("i")
-        icon.classList = "fas fa-cart-arrow-down"
+
 
 function initSite() {
     loadProducts();   
@@ -51,9 +50,9 @@ function addProductsToWebpage() {
 
         var button = document.createElement("div")
         button.classList = "button"
-        button.name = selectedProduct
+        button.data = selectedProduct
         button.onclick = function() {
-            addProductToCart(this)
+            addProductToCart(this.data)
         }
 
         var icon = document.createElement("i")
@@ -72,7 +71,7 @@ function addProductsToWebpage() {
 
 
         container.appendChild(productContainer)
-    showNumbers()
+        showNumbers()
     }
     
     var main = document.getElementsByTagName("main")[0]
