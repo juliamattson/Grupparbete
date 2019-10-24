@@ -1,0 +1,171 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+main {
+    padding-top: 70px;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    align-items: center;
+    background-color: #212121;
+    color: #ffffff;
+    height: 60px;
+    width: 100%;
+    padding: 20px;
+}
+
+.title {
+    display: flex;
+    justify-content: flex-start;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    width: 50%;
+}
+
+.cartIcon {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+}
+
+.fa-shopping-cart {
+    font-size: 25px;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row;
+    background-color: white;
+    min-height: 10em;
+}
+
+.productContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid#5596F5;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 0px 10px 0px 10px;
+}
+
+.addToCartButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+    height: 20px;
+    width: 90%;
+}
+
+img {
+    height: 120px;
+    width: auto;
+    object-fit: contain; 
+    margin-top: 10px;   
+}
+
+h2 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;  
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.button2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #E64E4E;
+    color: #ffffff;
+    border-radius: 6px;
+    border: none;
+    width: 80px;
+    height: 25px;  
+    font-size: 12px;   
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.button2:hover {
+    background-color: rgb(236, 118, 118);
+    cursor: pointer;
+}
+
+.fa-cart-arrow-down {
+    font-size: 13px;
+}
+
+.price {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    margin: 1px;
+}
+
+#numberOfProducts {
+    display: flex;
+    flex-direction: flex-end;
+    color: white;
+    margin-right: 10px;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.headerDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cartSiteHeader {
+    margin-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.confirmButton {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        background-color: #5596F5;
+        color: #ffffff;
+        border-radius: 6px;
+        border: none;
+        width: 170px;
+        height: 35px;     
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 20px;
+        margin-bottom: 50px;
+}
+
+.confirmText {
+    padding-left: 10px;
+}
+
+.bottomDiv {
+    display: flex;
+    justify-content: center;
+}

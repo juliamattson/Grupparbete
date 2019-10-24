@@ -22,47 +22,71 @@ function addProductsToWebpage() {
         var productName = document.createElement("h2")
         productName.innerText = selectedProduct.title
 
-console.log(selectedProduct.title)
-
-        var productDescription = document.createElement("div")
-        productDescription.classList = "description"
-        productDescription.innerText = selectedProduct.description
-
         var image = document.createElement("img")
         image.src = "/assets/" + selectedProduct.image
 
-        var price = document.createElement("div")
+        var price = document.createElement("p")
         price.classList = "price"
         price.innerText = selectedProduct.price
 
         var button = document.createElement("div")
-        button.classList = "button"
+        button.classList = "button2"
         button.name = selectedProduct
         button.onclick = function() {
             addProductToCart(this)
         }
 
         var icon = document.createElement("i")
-        icon.classList = "fas fa-cart-arrow-down"
+        icon.classList = "far fa-trash-alt"
 
         var buttonText = document.createElement("p")
-        buttonText.innerText = "Lägg till i kundvagnen"
+        buttonText.innerText = "Ta bort"
         button.appendChild(icon)
         button.appendChild(buttonText)
 
-        productContainer.appendChild(productName)
-        productContainer.appendChild(productDescription)
         productContainer.appendChild(image)
+        productContainer.appendChild(productName)
         productContainer.appendChild(price)
         productContainer.appendChild(button)
 
 
         container.appendChild(productContainer)
         showNumbers()
+
+        var headerDiv = document.createElement("div")
+        headerDiv.classList = "headerDiv"
+
+        var cartHeader = document.createElement("h1")
+        cartHeader.classList = "cartSiteHeader"
+        cartHeader.innerText = "Kundvagn"
+
+        var headerIcon = document.createElement("i")
+        headerIcon.classList = "fas fa-shopping-cart"
+
+        headerDiv.appendChild(headerIcon)
+        headerDiv.appendChild(cartHeader)
+
+        var bottomDiv = document.createElement("div")
+        bottomDiv.classList = "bottomDiv"
+        var confirmButton = document.createElement("div")
+        confirmButton.classList = "confirmButton"
+        
+        var confirmText = document.createElement("p")
+        confirmText.innerText = "Slutför ditt köp"
+        confirmText.classList = "confirmText"
+
+        var confirmIcon = document.createElement("i")
+        confirmIcon.classList = "fas fa-check"
+        confirmButton.appendChild(confirmIcon) 
+        confirmButton.appendChild(confirmText) 
+        bottomDiv.appendChild(confirmButton)    
+
     }
     
     var main = document.getElementsByTagName("main")[0]
+    main.appendChild(headerDiv)
     main.appendChild(container)
+    main.appendChild(bottomDiv)
     // Check your console to see that the products are stored in the listOfProducts varible.
     console.log(listOfProducts);
     
