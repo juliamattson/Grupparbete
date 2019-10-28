@@ -161,6 +161,11 @@ h2 {
         margin-bottom: 50px;
 }
 
+.confirmButton:hover {
+    background-color: rgb(111, 165, 247);
+    cursor: pointer;
+}
+
 .confirmText {
     padding-left: 10px;
 }
