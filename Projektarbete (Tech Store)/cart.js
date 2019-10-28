@@ -7,6 +7,8 @@ function initSite() {
 
 /** Uses the loaded products data to create a visible product list on the website */
 function addProductsToWebpage() {
+    var main = document.getElementsByTagName("main")[0]
+    main.innerHTML = ""
     var listOfProducts = JSON.parse(localStorage.getItem("cartList"))
     
     var container = document.createElement("div") 
@@ -31,9 +33,9 @@ function addProductsToWebpage() {
 
         var button = document.createElement("div")
         button.classList = "button2"
-        button.name = selectedProduct
+        button.data = i
         button.onclick = function() {
-            addProductToCart(this)
+            removeProductFromCart(this.data)
         }
 
         var icon = document.createElement("i")
@@ -83,7 +85,7 @@ function addProductsToWebpage() {
 
     }
     
-    var main = document.getElementsByTagName("main")[0]
+    
     main.appendChild(headerDiv)
     main.appendChild(container)
     main.appendChild(bottomDiv)
@@ -99,27 +101,27 @@ function addProductsToWebpage() {
     
 }
 
-function addProductToCart(product){
+function removeProductFromCart(index){
+    console.log(index)
 
     var cart = JSON.parse(localStorage.getItem("cartList"))
 
-    if(cart) {
-        // Här finns carten
-        // Pusha in produkten i cart
-        cart.push(product)
-    } else {
-        // Här finns inte carten
-        cart = []
-        // pusha in produkten i cart
-        cart.push(product)
-    }
+    cart.splice(index, 1)
 
+   /*  for (var i = 0; i < cart.length; i++){
+        if (product == cart[i]){
+            cart.splice(i, 1)
+        }
+    } */
+    
 
     // spara cart till localstorage
     localStorage.setItem("cartList", JSON.stringify(cart))
     showNumbers()
+    addProductsToWebpage()
  
 }
+
 
 function showNumbers() {
     var cart = JSON.parse(localStorage.getItem("cartList"))
