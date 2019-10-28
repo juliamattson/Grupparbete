@@ -1,7 +1,7 @@
 
 function initSite() {
     addProductsToWebpage();   
-    showNumbers() 
+    showNumbers()
     // This would also be a good place to initialize other parts of the UI
 }
 
@@ -14,9 +14,26 @@ function addProductsToWebpage() {
     var container = document.createElement("div") 
     container.classList = "container"
 
+    function createHeader() {
+        var headerDiv = document.createElement("div")
+        headerDiv.classList = "headerDiv"
+
+        var cartHeader = document.createElement("h1")
+        cartHeader.classList = "cartSiteHeader"
+        cartHeader.innerText = "Kundvagn"
+
+        var headerIcon = document.createElement("i")
+        headerIcon.classList = "fas fa-shopping-cart"
+
+        headerDiv.appendChild(headerIcon)
+        headerDiv.appendChild(cartHeader)
+
+        main.appendChild(headerDiv)
+    }
+    createHeader()
+
     for(var i = 0; i < listOfProducts.length; i++) {
         var selectedProduct = listOfProducts[i]
-        console.log(selectedProduct)
 
         var productContainer = document.createElement("div")
         productContainer.classList = "productContainer"
@@ -53,20 +70,7 @@ function addProductsToWebpage() {
 
 
         container.appendChild(productContainer)
-        showNumbers()
-
-        var headerDiv = document.createElement("div")
-        headerDiv.classList = "headerDiv"
-
-        var cartHeader = document.createElement("h1")
-        cartHeader.classList = "cartSiteHeader"
-        cartHeader.innerText = "Kundvagn"
-
-        var headerIcon = document.createElement("i")
-        headerIcon.classList = "fas fa-shopping-cart"
-
-        headerDiv.appendChild(headerIcon)
-        headerDiv.appendChild(cartHeader)
+        showNumbers()  
 
         var bottomDiv = document.createElement("div")
         bottomDiv.classList = "bottomDiv"
@@ -81,14 +85,13 @@ function addProductsToWebpage() {
         confirmIcon.classList = "fas fa-check"
         confirmButton.appendChild(confirmIcon) 
         confirmButton.appendChild(confirmText) 
-        bottomDiv.appendChild(confirmButton)    
+        bottomDiv.appendChild(confirmButton)  
 
     }
-    
-    
-    main.appendChild(headerDiv)
+
     main.appendChild(container)
     main.appendChild(bottomDiv)
+    
     // Check your console to see that the products are stored in the listOfProducts varible.
     console.log(listOfProducts);
     
@@ -106,20 +109,13 @@ function removeProductFromCart(index){
 
     var cart = JSON.parse(localStorage.getItem("cartList"))
 
-    cart.splice(index, 1)
-
-   /*  for (var i = 0; i < cart.length; i++){
-        if (product == cart[i]){
-            cart.splice(i, 1)
-        }
-    } */
+    cart.splice(index, 1)    
     
-
     // spara cart till localstorage
     localStorage.setItem("cartList", JSON.stringify(cart))
     showNumbers()
-    addProductsToWebpage()
- 
+    addProductsToWebpage() 
+    emptyCart()
 }
 
 
@@ -130,3 +126,17 @@ function showNumbers() {
     }
       
 }  
+
+function emptyCart() {
+var cart = JSON.parse(localStorage.getItem("cartList"))
+
+if(cart == 0) {
+     var empty = document.createElement("p")
+     empty.innerText = "Kundvagnen är tom"
+    }
+    main.appendChild(empty)
+}
+
+
+    
+
