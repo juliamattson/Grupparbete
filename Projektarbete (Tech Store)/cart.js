@@ -46,8 +46,8 @@ function addProductsToWebpage() {
             image.src = "/assets/" + selectedProduct.image
     
             var price = document.createElement("p")
-            price.classList = "price"
-            price.innerText = selectedProduct.price
+            price.classList = "price" 
+            price.innerText = selectedProduct.price + " " + "kr"
     
             var button = document.createElement("div")
             button.classList = "button2"
@@ -70,9 +70,18 @@ function addProductsToWebpage() {
             productContainer.appendChild(button)
     
             container.appendChild(productContainer)
-            showNumbers()    
+            showNumbers()  
+
+            var summa = document.createElement("div")
+            summa.classList = "summa"
+            var summaText = document.createElement("p")
+            summaText.classList = "summaText"
+            summaText.innerText = "Totalt pris: " + totalCart() +  " " + "kr"
+            
+            summa.appendChild(summaText)
         }
 
+        
         var bottomDiv = document.createElement("div")
         bottomDiv.classList = "bottomDiv"
         var confirmButton = document.createElement("div")
@@ -89,30 +98,15 @@ function addProductsToWebpage() {
         bottomDiv.appendChild(confirmButton)
         
         main.appendChild(container)
+        main.appendChild(summa)
         main.appendChild(bottomDiv)
+        
     } else  {
         var emptyCartFeedback = document.createElement("h4")
         emptyCartFeedback.innerText = "Din kundvagn är tom"
         emptyCartFeedback.classList = "emptyCart"
         main.appendChild(emptyCartFeedback)
-    }
-    
-    
-
-    
-
-    
-    
-    // Check your console to see that the products are stored in the listOfProducts varible.
-    console.log(listOfProducts);
-    
-
-    // Add your code here, remember to brake your code in to smaller function blocks
-    // to reduce complexity and increase readability. Each function should have
-    // an explainetory comment like the one for this function, see row 22.
-    
-    // TODO: Remove the console.log and these comments when you've read them.
-    
+    }   
 }
 
 function removeProductFromCart(index){
@@ -126,9 +120,16 @@ function removeProductFromCart(index){
     localStorage.setItem("cartList", JSON.stringify(cart))
     showNumbers()
     addProductsToWebpage() 
-    emptyCart()
 }
 
+function totalCart() {
+    var cart = JSON.parse(localStorage.getItem("cartList"))
+    var total = 0;
+    for (var i = 0; i < cart.length; i++){
+        total += cart[i].price;
+    }
+    return total
+}
 
 function showNumbers() {
     var cart = JSON.parse(localStorage.getItem("cartList"))
