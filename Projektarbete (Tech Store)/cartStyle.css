@@ -66,6 +66,7 @@ a {
     border-radius: 10px;
     margin: 10px;
     padding: 0px 10px 0px 10px;
+    background-color: #f5f5f5;
 }
 
 .addToCartButton {
@@ -173,4 +174,12 @@ h2 {
 .bottomDiv {
     display: flex;
     justify-content: center;
+}
+
+.emptyCart {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
 }
