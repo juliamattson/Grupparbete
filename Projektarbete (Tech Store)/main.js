@@ -46,7 +46,7 @@ function addProductsToWebpage() {
 
         var price = document.createElement("div")
         price.classList = "price"
-        price.innerText = selectedProduct.price
+        price.innerText = selectedProduct.price + " " + "kr"
 
         var button = document.createElement("div")
         button.classList = "button"
