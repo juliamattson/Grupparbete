@@ -175,3 +175,11 @@ h2 {
     display: flex;
     justify-content: center;
 }
+
+.emptyCart {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+}
