@@ -86,6 +86,9 @@ function addProductsToWebpage() {
         bottomDiv.classList = "bottomDiv"
         var confirmButton = document.createElement("div")
         confirmButton.classList = "confirmButton"
+        confirmButton.onclick = function() {
+            alert("Tack för ditt köp!")
+        }
         
         var confirmText = document.createElement("p")
         confirmText.innerText = "Slutför ditt köp"
