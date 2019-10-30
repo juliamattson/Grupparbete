@@ -15,7 +15,8 @@ main {
     flex-direction: row;
     position: fixed;
     align-items: center;
-    background-color: #212121;
+    background-color: #212121;    
+    color: #ffffff;
     height: 60px;
     width: 100%;
     padding: 20px;
@@ -52,6 +53,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: w;
     flex-direction: column;
     background-color: white;
     min-height: 10em;
@@ -62,6 +64,7 @@ a {
     flex-direction: column;
     align-items: center;
     padding: 30px;
+    width: 100%;
 }
 
 .addToCartButton {
@@ -70,12 +73,12 @@ a {
     align-items: center;
     background-color: blue;
     height: 20px;
-    width: 90%;
+    width: 90px;
 }
 
 img {
     height: 50vh;
-    width: auto;
+    width: 100%;
     object-fit: contain; 
     margin-top: 10px;   
 }
@@ -134,39 +137,4 @@ h2 {
     margin-right: 10px;
     font-size: 30px;
     font-family: Arial, Helvetica, sans-serif;
-}
-
-#login{
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.input{
-    color: #ffffff;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 10px;
-    margin-right: 5px;
-}
-
-.inputStyle{
-    display: flex;
-    height: 15px;
-    width: 70px;
-    margin-right: 5px;
-}
-
-.loginButton{
-    background-color: #5596F5;
-    color: #ffffff;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    padding: 0px 4px 0px 4px;
-    border-radius: 5px;
-    margin-right: 10px;
-}
-
-.loginButton:hover{
-    background-color: rgb(111, 165, 247);
-    cursor: pointer;
 }
