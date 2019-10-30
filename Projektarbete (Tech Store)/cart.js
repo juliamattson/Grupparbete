@@ -144,7 +144,7 @@ function showNumbers() {
 
 
 
-var users = [
+/* var users = [
     {
         userName: "",
         password: "",
@@ -164,7 +164,7 @@ var users = [
 
 var loggedInUser = {
 
-}
+} */
 
     
 

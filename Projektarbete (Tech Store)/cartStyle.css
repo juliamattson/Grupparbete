@@ -69,15 +69,6 @@ a {
     background-color: #f5f5f5;
 }
 
-.addToCartButton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: blue;
-    height: 20px;
-    width: 90%;
-}
-
 img {
     height: 120px;
     width: auto;
@@ -124,15 +115,6 @@ h2 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
     margin: 1px;
-}
-
-#numberOfProducts {
-    display: flex;
-    flex-direction: flex-end;
-    color: white;
-    margin-right: 10px;
-    font-size: 30px;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .headerDiv {
@@ -192,37 +174,11 @@ h2 {
     font-size: 20px;
 }
 
-#login{
+#numberOfProducts {
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.input{
-    color: #ffffff;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 10px;
-    margin-right: 5px;
-}
-
-.inputStyle{
-    display: flex;
-    height: 15px;
-    width: 70px;
-    margin-right: 5px;
-}
-
-.loginButton{
-    background-color: #5596F5;
-    color: #ffffff;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    padding: 0px 4px 0px 4px;
-    border-radius: 5px;
+    flex-direction: flex-end;
+    color: white;
     margin-right: 10px;
-}
-
-.loginButton:hover{
-    background-color: rgb(111, 165, 247);
-    cursor: pointer;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
 }
