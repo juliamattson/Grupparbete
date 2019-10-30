@@ -135,3 +135,27 @@ h2 {
     font-size: 30px;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+#login{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.input{
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    margin-right: 5px;
+}
+
+.inputStyle{
+    display: flex;
+    height: 15px;
+    width: 80px;
+    margin-right: 5px;
+}
+
+.loginButton{
+    margin-right: 10px;
+}
