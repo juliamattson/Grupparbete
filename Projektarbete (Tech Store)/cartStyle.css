@@ -208,10 +208,21 @@ h2 {
 .inputStyle{
     display: flex;
     height: 15px;
-    width: 80px;
+    width: 70px;
     margin-right: 5px;
 }
 
 .loginButton{
+    background-color: #5596F5;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    padding: 0px 4px 0px 4px;
+    border-radius: 5px;
     margin-right: 10px;
+}
+
+.loginButton:hover{
+    background-color: rgb(111, 165, 247);
+    cursor: pointer;
 }
