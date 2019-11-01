@@ -27,10 +27,17 @@
         </header>
 
         <main>
-            <div id="loginDiv">
-                <div class="userDiv"><p class="input">Användare:</p><input type="text" class="inputStyle"></div>
-                <div class="userDiv"><p class="input">Lösenord:</p><input type="text" class="inputStyle"></div>
-                <div id="loginButton">Logga in</div>
+            <div class="loginDiv">
+                <p class="rubrik1">Logga in</p>
+                <div class="userDiv"><input type="text" placeholder="Användarnamn" id="username"></div>
+                <div class="userDiv"><input type="password" placeholder="Lösenord" id="password"></div>
+                <div id="loginButton" onclick="logIn()">Logga in</div>
+            </div>
+            <div class="createDiv">                
+                <p class="rubrik2">Skapa ny användare</p>
+                <div class="userDiv"><input type="text" placeholder="Användarnamn" id="createUser"></div>
+                <div class="userDiv"><input type="password" placeholder="Lösenord" id="createPassword"></div>
+                <div id="createButton" onclick="createUser()">Registrera</div>
             </div>
         </main>
         <script src="./login.js"></script>
