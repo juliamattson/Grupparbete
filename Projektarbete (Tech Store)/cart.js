@@ -143,28 +143,5 @@ function showNumbers() {
 }  
 
 
-
-/* var users = [
-    {
-        userName: "",
-        password: "",
-        orders: [
-            {
-                date: "14/03/20", 
-                products: [
-                    {
-
-                    }
-                ]
-            }
-        ]
-    }
-]
-
-
-var loggedInUser = {
-
-} */
-
     
 
