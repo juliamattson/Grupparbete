@@ -9,16 +9,29 @@ function showNumbers() {
     }
       
 }  
-    var userName = document.getElementById("username").value 
+/* Funktion för att logga in om användaren redan är skapad och finns i localstorage */    
+function logIn() {
+    var userList = JSON.parse(localStorage.getItem("userList"))
+    var username = document.getElementById("username").value 
     var password = document.getElementById("password").value 
 
-    /* Funktion för att logga in om användaren redan är skapad och finns i localstorage */    
-    function logIn() {
-        
+    for (var i = 0; i < userList.length; i++) { 
+        if(username == userList[i].userName && password == userList[i].password){
+            // LOGGA IN!!
+            localStorage.setItem("loggedInUser", JSON.stringify(userList[i]))
+            alert("Du är inloggad!")
+            setTimeout(() => {
+                window.location = "cart.html"
+            }, 2000);
+            return
+        } 
     }
     
-    /* Funktion för att skapa ny användare och spara till en lista i localstorage över användare */
-    function createUser() { 
+    alert("Fel användarnamn eller lösenord! Försök igen.")
+}
+    
+/* Funktion för att skapa ny användare och spara till en lista i localstorage över användare */
+function createUser() { 
     var username = document.getElementById("createUser").value 
     var password = document.getElementById("createPassword").value 
 
@@ -37,7 +50,7 @@ function showNumbers() {
         userList.push(user)
     } 
 
-        console.log(userList)
+    console.log(userList)
     localStorage.setItem("userList", JSON.stringify(userList))
 }
 createUser()
@@ -58,8 +71,6 @@ createUser()
         ]
     }
 ]
+ */
 
-
-var loggedInUser = {
-
-} */
+       /*  localStorage.removeItem("loggedInUser") För att logga ut-knapp*/ 
