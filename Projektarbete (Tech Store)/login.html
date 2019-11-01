@@ -9,7 +9,7 @@
         
         <!-- Visit www.fontawesome.com on how to add font icons to your project -->
         <script src="https://kit.fontawesome.com/e8127072bf.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="/cartStyle.css"> <!-- Link your stylesheet file/files, do NOT write styles in the html file! -->
+        <link rel="stylesheet" href="./loginstyle.css"> <!-- Link your stylesheet file/files, do NOT write styles in the html file! -->
         
     </head>
     <body onload="initSite()">
@@ -19,7 +19,7 @@
                             <a href="/index.html"><h1>TechStore</h1></a>
                         </div>
                         <div class="cartIcon"> 
-                                <a href="./login.html"><i class="fas fa-user-friends"></i></a>
+                                <a href=""><i class="fas fa-user-friends"></i></a>
                                 <div id="numberOfProducts"></div>
                                 <a href="/cart.html"><i class="fas fa-shopping-cart"></i></a>                  
                             </div>
@@ -27,8 +27,12 @@
         </header>
 
         <main>
-            <!-- Add the content of your site here via javascript -->
+            <div id="loginDiv">
+                <div class="userDiv"><p class="input">Användare:</p><input type="text" class="inputStyle"></div>
+                <div class="userDiv"><p class="input">Lösenord:</p><input type="text" class="inputStyle"></div>
+                <div id="loginButton">Logga in</div>
+            </div>
         </main>
-        <script src="./cart.js"></script>
+        <script src="./login.js"></script>
     </body>
 </html>
