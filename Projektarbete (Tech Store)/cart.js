@@ -2,10 +2,9 @@
 function initSite() {
     addProductsToWebpage();   
     showNumbers()
-    // This would also be a good place to initialize other parts of the UI
 }
 
-/** Uses the loaded products data to create a visible product list on the website */
+/** Funktion för att göra produkterna synliga på hemsidan */
 function addProductsToWebpage() {
     var main = document.getElementsByTagName("main")[0]
     main.innerHTML = ""
@@ -112,19 +111,17 @@ function addProductsToWebpage() {
     }   
 }
 
+
+/* Funktion för knappen att ta bort en produkt ifrån kundvagnen */
 function removeProductFromCart(index){
-    console.log(index)
-
     var cart = JSON.parse(localStorage.getItem("cartList"))
-
     cart.splice(index, 1)    
-    
-    // spara cart till localstorage
     localStorage.setItem("cartList", JSON.stringify(cart))
     showNumbers()
     addProductsToWebpage() 
 }
 
+/* Funktion för att räkna ut totalbeloppet av kundvagnens innehåll */
 function totalCart() {
     var cart = JSON.parse(localStorage.getItem("cartList"))
     var total = 0;
@@ -134,6 +131,7 @@ function totalCart() {
     return total
 }
 
+/* Funktion som räknar och visar antalet produkter som är tillagda i kundvagnen */
 function showNumbers() {
     var cart = JSON.parse(localStorage.getItem("cartList"))
     if (cart){
