@@ -1,7 +1,5 @@
 var listOfProducts;
 
-
-/** Get products from the json file and store it in a gobal variable */
 function loadProducts() {
     fetch("./products.json")
     .then(function(response) {
@@ -12,7 +10,6 @@ function loadProducts() {
         addProductsToWebpage();
     });
 }
-
 
 function initSite() {
     loadProducts();   

@@ -18,7 +18,6 @@ function logIn() {
 
     for (var i = 0; i < userList.length; i++) { 
         if(username == userList[i].userName && password == userList[i].password){
-            // LOGGA IN!!
             localStorage.setItem("loggedInUser", JSON.stringify(userList[i]))
             alert("Du är inloggad!")
             setTimeout(() => {
