@@ -142,3 +142,27 @@ function showNumbers() {
       
 }  
 
+var orderToSave = {
+    date: new Date(),
+    products: JSON.parse(localStorage.getItem("cart"))
+}
+
+/* var users = [
+    {
+        userName: "",
+        password: "",
+        orders: [
+            {
+                date: "14/03/20", 
+                products: [
+                    {
+
+                    }
+                ]
+            }
+        ]
+    }
+]
+ */
+
+       /*  localStorage.removeItem("loggedInUser") För att logga ut-knapp*/ 
