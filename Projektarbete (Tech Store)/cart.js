@@ -86,7 +86,7 @@ function addProductsToWebpage() {
         bottomDiv.classList = "bottomDiv"
         var confirmButton = document.createElement("div")
         confirmButton.classList = "confirmButton"
-        confirmButton.onclick = function deleteCart() {
+        confirmButton.onclick = function deleteCart() { /* Funktion för att tömma kundvagnen vid slutfört köp */
             alert("Tack för ditt köp!")
             localStorage.removeItem("cartList")
             return window.location = "cart.html"    
