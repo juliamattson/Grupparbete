@@ -143,3 +143,7 @@ h2 {
     padding-right: 10px;
     font-size: 20px;
 }
+
+.fa-user-friends:hover{
+    cursor: pointer;
+}

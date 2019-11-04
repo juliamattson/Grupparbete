@@ -7,9 +7,9 @@ function showNumbers() {
     var cart = JSON.parse(localStorage.getItem("cartList"))
     if (cart){
         document.getElementById("numberOfProducts").innerText = cart.length   
-    }
-      
-}  
+    }      
+} 
+
 /* Funktion för att logga in om användaren redan är skapad och finns i localstorage */    
 function logIn() {
     var userList = JSON.parse(localStorage.getItem("userList"))
@@ -21,7 +21,7 @@ function logIn() {
             localStorage.setItem("loggedInUser", JSON.stringify(userList[i]))
             alert("Du är inloggad!")
             setTimeout(() => {
-                window.location = "cart.html"
+                window.location = "myside.html"
             }, 2000);
             return
         } 
@@ -55,22 +55,13 @@ function createUser() {
 }
 createUser()
 
-/* var users = [
-    {
-        userName: "",
-        password: "",
-        orders: [
-            {
-                date: "14/03/20", 
-                products: [
-                    {
-
-                    }
-                ]
-            }
-        ]
+function loginIcon() {
+    var loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"))
+    console.log(loggedInUser)
+    if(loggedInUser){
+        window.location = "myside.html"
+    } else {
+        alert("Du måste logga in!")
+        window.location = "login.html"
     }
-]
- */
-
-       /*  localStorage.removeItem("loggedInUser") För att logga ut-knapp*/ 
+}
