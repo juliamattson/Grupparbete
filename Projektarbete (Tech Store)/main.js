@@ -17,10 +17,9 @@ function loadProducts() {
 function initSite() {
     loadProducts();   
     showNumbers() 
-    // This would also be a good place to initialize other parts of the UI
 }
 
-/** Uses the loaded products data to create a visible product list on the website */
+/** Funktion för att göra produkterna synliga på hemsidan */
 function addProductsToWebpage() {
 
     var body = document.getElementsByTagName("body")[0] /* Plockar ut det första ur listan */
@@ -76,46 +75,34 @@ function addProductsToWebpage() {
     
     var main = document.getElementsByTagName("main")[0]
     main.appendChild(container)
-    // Check your console to see that the products are stored in the listOfProducts varible.
-    console.log(listOfProducts);
-    
-
-    // Add your code here, remember to brake your code in to smaller function blocks
-    // to reduce complexity and increase readability. Each function should have
-    // an explainetory comment like the one for this function, see row 22.
-    
-    // TODO: Remove the console.log and these comments when you've read them.
-    
 }
 
+/* Funktion för att lägga till produkter i kundvagnen i localstorage */
 function addProductToCart(product){
 
     var cart = JSON.parse(localStorage.getItem("cartList"))
 
     if(cart) {
         // Här finns carten
-        // Pusha in produkten i cart
         cart.push(product)
     } else {
         // Här finns inte carten
         cart = []
-        // pusha in produkten i cart
         cart.push(product)
     }
 
 
     // spara cart till localstorage
     localStorage.setItem("cartList", JSON.stringify(cart))
-    showNumbers()
- 
+    showNumbers() 
 }
 
+/* Funktion som räknar och visar antalet produkter som är tillagda i kundvagnen */
 function showNumbers() {
     var cart = JSON.parse(localStorage.getItem("cartList"))
     if (cart){
         document.getElementById("numberOfProducts").innerText = cart.length   
-    }
-      
+    } 
 }  
 
 

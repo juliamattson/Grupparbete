@@ -2,6 +2,7 @@ function initSite() {
     showNumbers()
 }
 
+/* Funktion som räknar och visar antalet produkter som är tillagda i kundvagnen */
 function showNumbers() {
     var cart = JSON.parse(localStorage.getItem("cartList"))
     if (cart){
