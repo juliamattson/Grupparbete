@@ -2,6 +2,7 @@
 function initSite() {
     addProductsToWebpage();   
     showNumbers()
+    deleteCart()
 }
 
 /** Funktion för att göra produkterna synliga på hemsidan */
@@ -85,8 +86,10 @@ function addProductsToWebpage() {
         bottomDiv.classList = "bottomDiv"
         var confirmButton = document.createElement("div")
         confirmButton.classList = "confirmButton"
-        confirmButton.onclick = function() {
+        confirmButton.onclick = function deleteCart() {
             alert("Tack för ditt köp!")
+            localStorage.removeItem("cartList")
+            return window.location = "cart.html"    
         }
         
         var confirmText = document.createElement("p")
@@ -110,7 +113,6 @@ function addProductsToWebpage() {
         main.appendChild(emptyCartFeedback)
     }   
 }
-
 
 /* Funktion för knappen att ta bort en produkt ifrån kundvagnen */
 function removeProductFromCart(index){
@@ -139,7 +141,4 @@ function showNumbers() {
     }
       
 }  
-
-
-    
 
