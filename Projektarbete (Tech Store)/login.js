@@ -55,6 +55,7 @@ function createUser() {
 }
 createUser()
 
+/* Funktion för att vid inloggning ska man hamna på "mina sidor" och om man inte är inloggad måste man göra det först och hamnar då på logga-in-sidan */
 function loginIcon() {
     var loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"))
     console.log(loggedInUser)
