@@ -2,7 +2,6 @@
 function initSite() {
     addProductsToWebpage();   
     showNumbers()
-    deleteCart()
 }
 
 /** Funktion för att göra produkterna synliga på hemsidan */
@@ -86,7 +85,12 @@ function addProductsToWebpage() {
         bottomDiv.classList = "bottomDiv"
         var confirmButton = document.createElement("div")
         confirmButton.classList = "confirmButton"
-        confirmButton.onclick = function deleteCart() { /* Funktion för att tömma kundvagnen vid slutfört köp */
+        confirmButton.onclick = function() { /* Funktion för att tömma kundvagnen vid slutfört köp */
+            var loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"))
+            console.log(loggedInUser)
+            if(loggedInUser) {
+                addCartToUser(loggedInUser)
+            }
             alert("Tack för ditt köp!")
             localStorage.removeItem("cartList")
             return window.location = "cart.html"    
@@ -114,7 +118,39 @@ function addProductsToWebpage() {
     }   
 }
 
-/* Funktion för knappen att ta bort en produkt ifrån kundvagnen */
+function addCartToUser(loggedInUser) {
+    var cart = JSON.parse(localStorage.getItem("cartList"))
+    var userList = JSON.parse(localStorage.getItem("userList"))
+
+    console.log(cart)
+
+    var orderToSave = {
+        date: new Date(),
+        products: cart
+    }
+
+    loggedInUser.orders.push(orderToSave)
+
+    var indexToRemove
+    
+    userList.forEach((user, i) => {
+        if(user.username == loggedInUser.username) {
+            indexToRemove = i
+        }    
+    });
+    
+    userList[indexToRemove] = loggedInUser
+    
+    localStorage.setItem("userList", JSON.stringify(userList))
+    localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser))
+    // Skapa ett "order"-objekt med date och products som properties.
+    // Pusha in "order"-objektet i loggedInUser.
+    // Ersätt usern med samma användarnamn i userList
+    // Spara loggedInUser och userList på nytt
+
+}
+
+/* Funktion för att ta bort produkt från kundvagn */
 function removeProductFromCart(index){
     var cart = JSON.parse(localStorage.getItem("cartList"))
     cart.splice(index, 1)    
@@ -139,13 +175,7 @@ function showNumbers() {
     if (cart){
         document.getElementById("numberOfProducts").innerText = cart.length   
     }
-      
 }  
-
-var orderToSave = {
-    date: new Date(),
-    products: JSON.parse(localStorage.getItem("cart"))
-}
 
 /* var users = [
     {
@@ -164,5 +194,3 @@ var orderToSave = {
     }
 ]
  */
-
-       /*  localStorage.removeItem("loggedInUser") För att logga ut-knapp*/ 
