@@ -20,13 +20,10 @@ function logIn() {
         if(username == userList[i].userName && password == userList[i].password){
             localStorage.setItem("loggedInUser", JSON.stringify(userList[i]))
             alert("Du är inloggad!")
-            setTimeout(() => {
-                window.location = "myside.html"
-            }, 2000);
+            window.location = "myside.html"
             return
         } 
     }
-    
     alert("Fel användarnamn eller lösenord! Försök igen.")
 }
     
@@ -49,11 +46,8 @@ function createUser() {
         userList = []
         userList.push(user)
     } 
-
-    console.log(userList)
     localStorage.setItem("userList", JSON.stringify(userList))
 }
-createUser()
 
 /* Funktion för att vid inloggning ska man hamna på "mina sidor" och om man inte är inloggad måste man göra det först och hamnar då på logga-in-sidan */
 function loginIcon() {
