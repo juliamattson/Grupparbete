@@ -99,3 +99,14 @@ a {
     justify-content: center;
 }
 
+.orderDay{
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.orderProduct{
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}

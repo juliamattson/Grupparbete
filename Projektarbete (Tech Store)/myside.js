@@ -1,25 +1,47 @@
-var main = document.getElementById("main")
+addOrdersToWebpage()
 
-var header = document.createElement("p")
-header.classList = "mysideHeader"
-header.innerText = "Dina beställningar"
-var orders = document.createElement("div")
-orders.classList = "orders"
+function addOrdersToWebpage(){
+    var main = document.getElementById("main")
 
-var logOutDiv = document.createElement("div")
-logOutDiv.classList = "logOutDiv"
+    var header = document.createElement("p")
+    header.classList = "mysideHeader"
+    header.innerText = "Dina beställningar"
 
-var logOut = document.createElement("p")
-logOut.classList = "logOut"
-logOut.innerText = "Logga ut"
-logOutDiv.appendChild(logOut)
 
-main.appendChild(header)
-main.appendChild(logOutDiv)
+    var logOutDiv = document.createElement("div")
+    logOutDiv.classList = "logOutDiv"
+    /* Funktion för att logga ut inloggad användare */
+    logOutDiv.onclick = function(){
+        localStorage.removeItem("loggedInUser")
+        alert("Du är nu utloggad!")
+        window.location = "login.html"
+    }
+    var logOut = document.createElement("p")
+    logOut.classList = "logOut"
+    logOut.innerText = "Logga ut"
+    logOutDiv.appendChild(logOut)
+    
+    main.appendChild(header)
+    
+    var userOrders = JSON.parse(localStorage.getItem("loggedInUser")).orders
+    
+    userOrders.forEach(order => {
 
-/* Funktion för att logga ut inloggad användare */
-logOutDiv.onclick = function logOut() {
-    localStorage.removeItem("loggedInUser")
-    alert("Du är nu utloggad!")
-    window.location = "login.html"
+        // loop för att printa ut datum
+        var orderDay = document.createElement("div")
+        orderDay.classList = "orderDay"
+        var date = new Date(order.date)
+        orderDay.innerHTML = "Beställning mottagen:" + " " + date.toLocaleDateString()
+        main.appendChild(orderDay)
+        order.products.forEach(product => {
+            // loop för att printa ut produkterna
+            var orderProduct = document.createElement("div")
+            orderProduct.classList = "orderProduct"
+            orderProduct.innerHTML = product.title
+            main.appendChild(orderProduct)
+            console.log(product)
+        });
+    });
+    main.appendChild(logOutDiv)
 }
+

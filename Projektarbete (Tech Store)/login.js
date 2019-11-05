@@ -56,7 +56,6 @@ function loginIcon() {
     if(loggedInUser){
         window.location = "myside.html"
     } else {
-        alert("Du måste logga in!")
         window.location = "login.html"
     }
 }
