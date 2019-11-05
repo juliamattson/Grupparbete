@@ -17,4 +17,9 @@ logOutDiv.appendChild(logOut)
 main.appendChild(header)
 main.appendChild(logOutDiv)
 
-
+/* Funktion för att logga ut inloggad användare */
+logOutDiv.onclick = function logOut() {
+    localStorage.removeItem("loggedInUser")
+    alert("Du är nu utloggad!")
+    window.location = "login.html"
+}
