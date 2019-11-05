@@ -143,11 +143,6 @@ function addCartToUser(loggedInUser) {
     
     localStorage.setItem("userList", JSON.stringify(userList))
     localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser))
-    // Skapa ett "order"-objekt med date och products som properties.
-    // Pusha in "order"-objektet i loggedInUser.
-    // Ersätt usern med samma användarnamn i userList
-    // Spara loggedInUser och userList på nytt
-
 }
 
 /* Funktion för att ta bort produkt från kundvagn */
@@ -176,21 +171,3 @@ function showNumbers() {
         document.getElementById("numberOfProducts").innerText = cart.length   
     }
 }  
-
-/* var users = [
-    {
-        userName: "",
-        password: "",
-        orders: [
-            {
-                date: "14/03/20", 
-                products: [
-                    {
-
-                    }
-                ]
-            }
-        ]
-    }
-]
- */

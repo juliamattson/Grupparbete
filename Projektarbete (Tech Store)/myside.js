@@ -24,22 +24,37 @@ function addOrdersToWebpage(){
     main.appendChild(header)
     
     var userOrders = JSON.parse(localStorage.getItem("loggedInUser")).orders
-    
+
     userOrders.forEach(order => {
 
         // loop för att printa ut datum
         var orderDay = document.createElement("div")
+        var orderDiv = document.createElement("div")
+        orderDiv.classList = "orderDiv"
         orderDay.classList = "orderDay"
         var date = new Date(order.date)
-        orderDay.innerHTML = "Beställning mottagen:" + " " + date.toLocaleDateString()
-        main.appendChild(orderDay)
+        orderDay.innerHTML = "Datum:" + " " + date.toLocaleDateString()
+        orderDiv.appendChild(orderDay)
+        main.appendChild(orderDiv)
         order.products.forEach(product => {
             // loop för att printa ut produkterna
             var orderProduct = document.createElement("div")
             orderProduct.classList = "orderProduct"
-            orderProduct.innerHTML = product.title
-            main.appendChild(orderProduct)
-            console.log(product)
+
+            var title = document.createElement("h3")
+            title.innerText = product.title
+            
+            var image = document.createElement("img")
+            image.src = "./assets/" + product.image
+            image.classList = "orderImage"
+
+            var price = document.createElement("p")
+            price.innerText = product.price + " " + "kr"
+
+            orderProduct.appendChild(title)
+            orderProduct.appendChild(image)            
+            orderProduct.appendChild(price)
+            orderDiv.appendChild(orderProduct)
         });
     });
     main.appendChild(logOutDiv)
