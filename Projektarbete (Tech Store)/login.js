@@ -16,15 +16,20 @@ function logIn() {
     var username = document.getElementById("username").value 
     var password = document.getElementById("password").value 
 
-    for (var i = 0; i < userList.length; i++) { 
-        if(username == userList[i].userName && password == userList[i].password){
-            localStorage.setItem("loggedInUser", JSON.stringify(userList[i]))
-            alert("Du är inloggad!")
-            window.location = "myside.html"
-            return
-        } 
-    }
-    alert("Fel användarnamn eller lösenord! Försök igen.")
+    if(!userList) {
+        alert("Registrera användare!")
+    } else {
+            for (var i = 0; i < userList.length; i++) {
+                if(userList && username == userList[i].userName && password == userList[i].password){
+                    localStorage.setItem("loggedInUser", JSON.stringify(userList[i]))
+                    alert("Du är inloggad!")
+                    window.location = "myside.html"
+                    return
+                }else {
+                    alert("Fel användarnamn eller lösenord! Försök igen.")
+                } 
+            }    
+        }
 }
     
 /* Funktion för att skapa ny användare och spara till en lista i localstorage över användare */
@@ -42,9 +47,11 @@ function createUser() {
 
     if(userList) {
         userList.push(user)
+        alert("Registrering lyckades!")
     } else {
         userList = []
         userList.push(user)
+        alert("Registrering lyckades!")
     } 
     localStorage.setItem("userList", JSON.stringify(userList))
 }

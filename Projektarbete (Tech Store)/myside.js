@@ -30,12 +30,15 @@ function addOrdersToWebpage(){
         // loop för att printa ut datum
         var orderDay = document.createElement("div")
         var orderDiv = document.createElement("div")
+        var productDiv = document.createElement("div")
         orderDiv.classList = "orderDiv"
         orderDay.classList = "orderDay"
+        productDiv.classList = "productDiv"
         var date = new Date(order.date)
         orderDay.innerHTML = "Datum:" + " " + date.toLocaleDateString()
-        orderDiv.appendChild(orderDay)
-        main.appendChild(orderDiv)
+        productDiv.appendChild(orderDay)
+        productDiv.appendChild(orderDiv)
+        main.appendChild(productDiv)
         order.products.forEach(product => {
             // loop för att printa ut produkterna
             var orderProduct = document.createElement("div")
