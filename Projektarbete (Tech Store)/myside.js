@@ -1,12 +1,12 @@
 addOrdersToWebpage()
 
+/* Funktion för att printa ut produkterna från beställningen */
 function addOrdersToWebpage(){
     var main = document.getElementById("main")
 
     var header = document.createElement("p")
     header.classList = "mysideHeader"
     header.innerText = "Dina beställningar"
-
 
     var logOutDiv = document.createElement("div")
     logOutDiv.classList = "logOutDiv"

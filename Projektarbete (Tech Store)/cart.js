@@ -87,7 +87,6 @@ function addProductsToWebpage() {
         confirmButton.classList = "confirmButton"
         confirmButton.onclick = function() { /* Funktion för att tömma kundvagnen vid slutfört köp */
             var loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"))
-            console.log(loggedInUser)
             if(loggedInUser) {
                 addCartToUser(loggedInUser)
             }
@@ -118,11 +117,10 @@ function addProductsToWebpage() {
     }   
 }
 
+/* Funktion till att spara order till inloggad användare, samt uppdaterar användaren i userList */
 function addCartToUser(loggedInUser) {
     var cart = JSON.parse(localStorage.getItem("cartList"))
     var userList = JSON.parse(localStorage.getItem("userList"))
-
-    console.log(cart)
 
     var orderToSave = {
         date: new Date(),
