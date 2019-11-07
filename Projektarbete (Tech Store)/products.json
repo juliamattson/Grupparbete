@@ -1,0 +1,53 @@
+[
+    {
+        "title": "iPhone X",
+        "description": "Last years phone from Apple with a beautiful all display front.",
+        "image": "iPhoneX.png",
+        "price": 11495
+    },{
+        "title": "One Plus 5",
+        "description": "Sleek and powerful smartphone from One Plus.",
+        "image": "OnePlus5.png",
+        "price": 4995
+    },{
+        "title": "Galaxy S8",
+        "description": "Really cool edge to edge smartphone from Samsung.",
+        "image": "SamsungS8.png",
+        "price": 7990
+    },{
+        "title": "LG V30",
+        "description": "Super nice and beautiful smartphone from LG.",
+        "image": "LGV30.png",
+        "price": 7495
+    },{
+        "title": "Iphone 11 Pro",
+        "description": "Pro cameras. Pro display. Pro performance.",
+        "image": "iPhone11.png",
+        "price": 10095
+    },{
+        "title": "Doro 8080",
+        "description": "The smart phone with new design and voice navigation.",
+        "image": "Doro8080.png",
+        "price": 3990
+    },{
+        "title": "Nokia 7.2",
+        "description": "More power. Less charging.",
+        "image": "Nokia72.png",
+        "price": 3790
+    },{
+        "title": "Galaxy Note 10",
+        "description": "A new slimmer design and a powerful 24h+ battery.",
+        "image": "SamsungGalaxyNote10.png",
+        "price": 10790
+    },{
+        "title": "Sony Xperia",
+        "description": "Wider experience, sleeker design.",
+        "image": "SonyXperia.png",
+        "price": 7990
+    },{
+        "title": "Galaxy S10",
+        "description": "With a pro camera and wireless battery sharing.",
+        "image": "SamsungGalaxyS10.png",
+        "price": 9990
+    }
+]

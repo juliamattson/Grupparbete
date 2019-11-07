@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 70px;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    align-items: center;
+    background-color: #212121;    
+    color: #ffffff;
+    height: 60px;
+    width: 100%;
+    padding: 20px;
+}
+
+.title {
+    display: flex;
+    justify-content: flex-start;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    width: 50%;
+}
+
+.cartIcon {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+}
+
+.fa-shopping-cart {
+    font-size: 25px;
+    color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+#numberOfProducts {
+    display: flex;
+    flex-direction: flex-end;
+    color: white;
+    margin-right: 10px;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.fa-user-friends{
+    padding-right: 10px;
+    font-size: 20px;
+}
+
+.fa-user-friends:hover{
+    cursor: pointer;
+}
+
+
+.mysideHeader{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.logOut {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #5596F5;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 7px;
+    width: 80px;
+    height: 25px;
+}
+
+.logOut:hover{
+    background-color: rgb(111, 165, 247);
+    cursor: pointer;
+}
+
+.logOutDiv{
+    display: flex;
+    justify-content: center;
+}
+
+.productDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black; 
+    border-radius: 7px;   
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px;
+    padding: 10px;
+    width: 70vw;
+}
+
+.orderDay{
+    display: flex;
+    justify-content: center;
+    margin-top: -20px;
+    background-color: #ffffff;
+    width: 155px;
+}
+
+.orderProduct{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0px 10px 0px 10px;
+}
+
+.orderDiv {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.orderImage {
+    height: 120px;
+}
+
+.title {
+    font-size: 20px;
+}

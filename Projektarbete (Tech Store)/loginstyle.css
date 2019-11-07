@@ -1,0 +1,168 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 70px;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    align-items: center;
+    background-color: #212121;    
+    color: #ffffff;
+    height: 60px;
+    width: 100%;
+    padding: 20px;
+}
+
+.title {
+    display: flex;
+    justify-content: flex-start;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    width: 50%;
+}
+
+.cartIcon {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+}
+
+.fa-shopping-cart {
+    font-size: 25px;
+    color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+#numberOfProducts {
+    display: flex;
+    flex-direction: flex-end;
+    color: white;
+    margin-right: 10px;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.fa-user-friends{
+    padding-right: 10px;
+    font-size: 20px;
+}
+
+.fa-user-friends:hover{
+    cursor: pointer;
+}
+
+.loginDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 7px;
+    height: 180px;
+    width: 300px;
+    margin-top: 30px;
+}
+
+.createDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 7px;
+    height: 200px;
+    width: 300px;
+    margin-top: 30px;
+}
+
+.userDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 40px;
+}
+
+#password, #username{
+    height: 20px;
+    margin-left: 7px;
+}
+
+#loginButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #5596F5;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 7px;
+    width: 80px;
+    height: 25px;
+    margin-top: 20px;
+}
+
+#loginButton:hover{
+    background-color: rgb(111, 165, 247);
+    cursor: pointer;
+}
+
+#createButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #5596F5;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 7px;
+    width: 100px;
+    height: 25px;
+    margin-top: 20px;
+}
+
+#createButton:hover{
+    background-color: rgb(111, 165, 247);
+    cursor: pointer;
+}
+
+.input{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.rubrik1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin-top: -35px;
+    background-color: white;
+    width: 100px;
+    text-align: center;
+}
+
+.rubrik2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin-top: -50px;
+    background-color: white;
+    width: 100px;
+    text-align: center;
+}
+

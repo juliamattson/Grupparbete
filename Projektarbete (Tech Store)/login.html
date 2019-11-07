@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <title>TechStore</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://kit.fontawesome.com/e8127072bf.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./loginstyle.css"> 
+        
+    </head>
+    <body onload="initSite()">
+        <header>
+            <div class="navbar">
+                <div class="title">
+                    <a href="/index.html"><h1>TechStore</h1></a>
+                </div>
+                <div class="cartIcon"> 
+                    <i onclick="loginIcon()" class="fas fa-user-friends"></i>
+                <div id="numberOfProducts"></div>
+                    <a href="/cart.html"><i class="fas fa-shopping-cart"></i></a>                  
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="loginDiv">
+                <p class="rubrik1">Logga in</p>
+                <div class="userDiv"><input type="text" placeholder="Användarnamn" id="username"></div>
+                <div class="userDiv"><input type="password" placeholder="Lösenord" id="password"></div>
+                <div id="loginButton" onclick="logIn()">Logga in</div>
+            </div>
+            <div class="createDiv">                
+                <p class="rubrik2">Skapa ny användare</p>
+                <div class="userDiv"><input type="text" placeholder="Användarnamn" id="createUser"></div>
+                <div class="userDiv"><input type="password" placeholder="Lösenord" id="createPassword"></div>
+                <div id="createButton" onclick="createUser()">Registrera</div>
+            </div>
+        </main>
+        <script src="./login.js"></script>
+    </body>
+</html>
